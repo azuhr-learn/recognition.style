@@ -3,8 +3,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <title>Recognition Style Quiz</title>
-    <style>
+  <title>Recognition Style Quiz</title>
+  
+  <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -191,11 +192,124 @@
         margin: 8px 0;
       }
     }
-  </style>
+  
+<style>
+.header-row {
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: flex-start;
+  gap: 20px; /* spacing between logo and title */
+  padding: 12px 20px;
+  background-color: #fff;
+  border-bottom: 2px solid #e0e0e0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.header-row img {
+  height: 40px;
+  width: auto;
+}
+
+.header-row h1 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #0053B9;
+  font-size: 2.4em;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .header-row h1 {
+    font-size: 1.8em;
+  }
+}
+@media (max-width: 480px) {
+  .header-row h1 {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-row {
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: flex-start;
+  gap: 20px; /* spacing between logo and title */
+  padding: 12px 20px;
+  background-color: #fff;
+  border-bottom: 2px solid #e0e0e0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+  .header-row img {
+    height: 32px;
+  }
+  
+.header-row h1 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #0053B9;
+  font-size: 2.4em;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .header-row h1 {
+    font-size: 1.8em;
+  }
+}
+@media (max-width: 480px) {
+  .header-row h1 {
+    font-size: 1.4em;
+  }
+}
+
+}
+@media (max-width: 480px) {
+  .header-row {
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: flex-start;
+  gap: 20px; /* spacing between logo and title */
+  padding: 12px 20px;
+  background-color: #fff;
+  border-bottom: 2px solid #e0e0e0;
+  max-width: 900px;
+  margin: 0 auto;
+}
+  .header-row img {
+    height: 28px;
+  }
+  
+.header-row h1 {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #0053B9;
+  font-size: 2.4em;
+  line-height: 1;
+}
+@media (max-width: 768px) {
+  .header-row h1 {
+    font-size: 1.8em;
+  }
+}
+@media (max-width: 480px) {
+  .header-row h1 {
+    font-size: 1.4em;
+  }
+}
+
+}
+</style>
+</style>
 </head>
 <body>
-
+<header class="header-row">
+  <a href="https://azuhr.com/about/" target="_blank" rel="noopener noreferrer">
+    <img src="https://azuhr.com/wp-content/uploads/2025/11/Azuhr-Logo-Primary-Positive-cropped.png" alt="Azuhr Logo">
+  </a>
   <h1>Recognition Style Quiz</h1>
+</header>
+
+  
   <div class="instructions">
     <strong>Instructions:</strong> This tool helps you discover your preferred recognition style at work. Read each group of statements and rank the five items in each group from 1 (Least like me) to 5 (Most like me). Use each number only once per group.
   </div>
@@ -214,7 +328,7 @@
 
   <div class="interpretation" id="interpretation">
     <strong>Interpretation:</strong> Your highest score represents your primary recognition style. A close second may indicate a strong secondary preference.<br>
-    <strong>Tip:</strong> Share your results with your team or manager to help them understand how you like to be recognised.
+    <br><strong>Tip:</strong> Share your results with your team or manager to help them understand how you like to be recognised.
   </div>
 
   <script>
@@ -343,5 +457,3 @@
   </script>
 </body>
 </html>
-
-
