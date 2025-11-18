@@ -3,13 +3,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recognition Style Quiz</title>
   
   <style>
     body {
+overflow-x: hidden;
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 1.25rem;
       background-color: #f9f9f9;
       color: #00214F;
     }
@@ -17,116 +19,116 @@
       text-align: center;
       color: #0053B9;
       font-size: 2.4em;
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
     }
     .instructions {
-      max-width: 900px;
-      margin: 0 auto 30px;
-      font-size: 16px;
+      max-width: 56.25rem;
+      margin: 0 auto 1.875rem;
+      font-size: 1.0rem;
       line-height: 1.6;
       background: #fff;
-      padding: 15px 20px;
-      border-radius: 8px;
-      border-left: 6px solid #1F7BE7;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 0.938rem 1.25rem;
+      border-radius: 0.5rem;
+      border-left: 0.375rem solid #1F7BE7;
+      box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.1);
     }
     .instructions strong {
       font-weight: bold;
       color: #0053B9;
     }
     .group {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
+      max-width: 56.25rem;
+      margin: 1.25rem auto;
+      padding: 1.25rem;
       background: #fff;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      border-radius: 0.5rem;
+      border: 0.062rem solid #ccc;
+      box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.05);
     }
     .group h2 {
       color: #1F7BE7;
       font-size: 1.4em;
       font-weight: 600;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #00D9BA;
-      padding-bottom: 8px;
+      margin-bottom: 0.938rem;
+      border-bottom: 0.188rem solid #00D9BA;
+      padding-bottom: 0.5rem;
     }
     .group h2 span {
       font-weight: 600;
     }
     .question {
-      margin-bottom: 15px;
+      margin-bottom: 0.938rem;
     }
     .question label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 0.5rem;
       font-weight: 500;
     }
     .rating-options {
       display: flex;
-      gap: 12px;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
     .rating-options label {
       background: #f0f4ff;
-      padding: 6px 10px;
-      border-radius: 4px;
+      padding: 0.375rem 0.625rem;
+      border-radius: 0.25rem;
       cursor: pointer;
       transition: background 0.3s;
-      flex: 1 1 60px;
+      flex: 1 1 3.75rem;
       text-align: center;
     }
     .rating-options input {
-      margin-right: 4px;
+      margin-right: 0.25rem;
     }
     .rating-options label:hover {
       background: #dbe8ff;
     }
     .warning {
       color: #FF8367;
-      font-size: 14px;
-      margin-top: 10px;
+      font-size: 0.875rem;
+      margin-top: 0.625rem;
       display: none;
       font-weight: 500;
     }
     .buttons {
       text-align: center;
-      margin: 30px 0;
+      margin: 1.875rem 0;
     }
     button {
       background-color: #00D9BA;
       color: #fff;
       border: none;
-      padding: 12px 24px;
-      margin: 10px;
-      font-size: 16px;
-      border-radius: 6px;
+      padding: 0.75rem 1.5rem;
+      margin: 0.625rem;
+      font-size: 1.0rem;
+      border-radius: 0.375rem;
       cursor: pointer;
       transition: background 0.3s;
-      width: 180px;
+      width: 11.25rem;
     }
     button:hover {
       background-color: #FF8367;
     }
     #results-container {
       text-align: center;
-      margin-top: 30px;
+      margin-top: 1.875rem;
     }
     #results-title {
       font-size: 1.6em;
       color: #0053B9;
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
     }
     table.results-table {
       width: 90%;
-      max-width: 500px;
+      max-width: 31.25rem;
       border-collapse: collapse;
-      margin: 10px auto;
-      font-size: 15px;
+      margin: 0.625rem auto;
+      font-size: 0.938rem;
       background: #fff;
-      border-radius: 8px;
+      border-radius: 0.5rem;
       overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.1);
     }
     table.results-table th {
       background: #1F7BE7;
@@ -134,8 +136,8 @@
       font-weight: 600;
     }
     table.results-table th, table.results-table td {
-      padding: 10px 18px;
-      border: 1px solid #ccc;
+      padding: 0.625rem 1.125rem;
+      border: 0.062rem solid #ccc;
       text-align: center;
     }
     table.results-table tr:hover {
@@ -143,53 +145,53 @@
       color: #fff;
     }
     .interpretation {
-      max-width: 900px;
-      margin: 20px auto;
-      font-size: 15px;
+      max-width: 56.25rem;
+      margin: 1.25rem auto;
+      font-size: 0.938rem;
       color: #333;
       background: #fff;
-      padding: 18px;
-      border-radius: 8px;
-      border-left: 6px solid #00D9BA;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 1.125rem;
+      border-radius: 0.5rem;
+      border-left: 0.375rem solid #00D9BA;
+      box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.1);
       display: none;
     }
 
     /* ✅ Responsive Design */
-    @media (max-width: 768px) {
+    @media (max-width: 48.0rem) {
       h1 {
         font-size: 1.8em;
       }
       .instructions {
-        font-size: 14px;
-        padding: 12px;
+        font-size: 0.875rem;
+        padding: 0.75rem;
       }
       .group {
-        padding: 15px;
+        padding: 0.938rem;
       }
       .group h2 {
         font-size: 1.2em;
       }
       .rating-options {
         flex-direction: row;
-        gap: 8px;
+        gap: 0.5rem;
       }
       button {
-        width: 140px;
-        font-size: 14px;
+        width: 8.75rem;
+        font-size: 0.875rem;
       }
       table.results-table {
-        font-size: 14px;
+        font-size: 0.875rem;
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 30.0rem) {
       .rating-options label {
         flex: 1 1 40%;
       }
       button {
         width: 100%;
-        margin: 8px 0;
+        margin: 0.5rem 0;
       }
     }
   
@@ -198,15 +200,15 @@
   display: flex;
   align-items: center; /* Vertical centering */
   justify-content: flex-start;
-  gap: 20px; /* spacing between logo and title */
-  padding: 12px 20px;
+  gap: 1.25rem; /* spacing between logo and title */
+  padding: 0.75rem 1.25rem;
   background-color: #fff;
-  border-bottom: 2px solid #e0e0e0;
-  max-width: 900px;
+  border-bottom: 0.125rem solid #e0e0e0;
+  max-width: 56.25rem;
   margin: 0 auto;
 }
 .header-row img {
-  height: 40px;
+  height: 2.5rem;
   width: auto;
 }
 
@@ -217,31 +219,31 @@
   font-size: 2.4em;
   line-height: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 48.0rem) {
   .header-row h1 {
     font-size: 1.8em;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 30.0rem) {
   .header-row h1 {
     font-size: 1.4em;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48.0rem) {
   .header-row {
   display: flex;
   align-items: center; /* Vertical centering */
   justify-content: flex-start;
-  gap: 20px; /* spacing between logo and title */
-  padding: 12px 20px;
+  gap: 1.25rem; /* spacing between logo and title */
+  padding: 0.75rem 1.25rem;
   background-color: #fff;
-  border-bottom: 2px solid #e0e0e0;
-  max-width: 900px;
+  border-bottom: 0.125rem solid #e0e0e0;
+  max-width: 56.25rem;
   margin: 0 auto;
 }
   .header-row img {
-    height: 32px;
+    height: 2.0rem;
   }
   
 .header-row h1 {
@@ -251,32 +253,32 @@
   font-size: 2.4em;
   line-height: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 48.0rem) {
   .header-row h1 {
     font-size: 1.8em;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 30.0rem) {
   .header-row h1 {
     font-size: 1.4em;
   }
 }
 
 }
-@media (max-width: 480px) {
+@media (max-width: 30.0rem) {
   .header-row {
   display: flex;
   align-items: center; /* Vertical centering */
   justify-content: flex-start;
-  gap: 20px; /* spacing between logo and title */
-  padding: 12px 20px;
+  gap: 1.25rem; /* spacing between logo and title */
+  padding: 0.75rem 1.25rem;
   background-color: #fff;
-  border-bottom: 2px solid #e0e0e0;
-  max-width: 900px;
+  border-bottom: 0.125rem solid #e0e0e0;
+  max-width: 56.25rem;
   margin: 0 auto;
 }
   .header-row img {
-    height: 28px;
+    height: 1.75rem;
   }
   
 .header-row h1 {
@@ -286,12 +288,12 @@
   font-size: 2.4em;
   line-height: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 48.0rem) {
   .header-row h1 {
     font-size: 1.8em;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 30.0rem) {
   .header-row h1 {
     font-size: 1.4em;
   }
