@@ -106,7 +106,6 @@
       width: 180px;
     }
     button:hover {
-background-color: #1F7BE7;
       background-color: #FF8367;
     }
     #results-container {
@@ -313,13 +312,13 @@ background-color: #1F7BE7;
   
   <div class="instructions">
     <strong>Instructions:</strong> This tool helps you discover your preferred recognition style at work. Read each group of statements and rank the five items in each group from 1 (Least like me) to 5 (Most like me). Use each number only once per group.
-  <button id="savePdfBtn" style="display:none;">Save as PDF</button></div>
+  </div>
 
   <div id="groups"></div>
 
   <div class="buttons">
     <button id="submitBtn">Submit</button>
-    <button id="resetBtn">Reset</button>
+    <button id="resetBtn">Reset</button><button id='savePdfBtn' style='display:none;'>Save as PDF</button>
   </div>
 
   <div id="results-container">
@@ -464,14 +463,13 @@ const saveBtn = document.getElementById('savePdfBtn');
 const submitBtn = document.getElementById('submitBtn');
 
 submitBtn.addEventListener('click', () => {
-    // Show Save as PDF button after results are displayed
     saveBtn.style.display = 'inline-block';
 });
 
 saveBtn.addEventListener('click', async () => {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF('p', 'pt', 'a4');
-    const element = document.body;
+    const element = document.body; // Capture entire body including logo
     const canvas = await html2canvas(element, { scale: 2 });
     const imgData = canvas.toDataURL('image/png');
     const imgProps = pdf.getImageProperties(imgData);
